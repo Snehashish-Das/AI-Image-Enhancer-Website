@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Enhancer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Animated Background Shapes -->
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <h1>AI Image Enhancer</h1>
+        <form id="uploadForm">
+            <input type="file" name="file" id="fileInput" accept="image/*">
+            <button type="submit">Upload and Enhance</button>
+        </form>
+        <div id="progressContainer" class="hidden">
+            <div id="progressBar"></div>
+            <p>Processing your image, please wait...</p>
+        </div>
+        
+        <div id="resultContainer" class="hidden">
+            <h2>Enhanced Image Result</h2>
+            <div class="image-view">
+                <div class="image-container">
+                    <h3>Original Image</h3>
+                    <img id="originalImage" src="" alt="Original">
+                    <div class="button-container">
+                        <a id="viewOriginal" href="#" target="_blank">View Original</a>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <h3>Enhanced Image</h3>
+                    <img id="enhancedImage" src="" alt="Enhanced">
+                    <div class="button-container">
+                        <a id="viewEnhanced" href="#" target="_blank">View Enhanced</a>
+                        <a id="downloadEnhanced" href="#" download>Download Enhanced</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
